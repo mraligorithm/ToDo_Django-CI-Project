@@ -5,7 +5,7 @@ import os
 # Installed App
 INSTALLED_APPS += ('django_nose',)
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-TEST_OUTPUT_DIR = os.environ.get('TEST_OUTPUT_DIR', '.')
+TEST_OUTPUT_DIR = os.environ.get('TEST_OUTPUT_DIR', '.')  # '.' /reporst
 NOSE_ARGS = [
 '--verbosity=2', # Verbose ouput
 '--nologcapture', # dont out put log capture
@@ -14,9 +14,9 @@ NOSE_ARGS = [
 '--with-spec', # spec style tests
 '--spec-color', #
 '--with-xunit',
-'--xunit-file=%s/unittests.xml' % TEST_OUTPUT_DIR,
+'--xunit-file=%s/unittests.xml' % TEST_OUTPUT_DIR, # /reports/utitledtests.xml
 '--cover-xml', # produce XML coverage info
-'--cover-xml-file=%s/coverage.xml' % TEST_OUTPUT_DIR,
+'--cover-xml-file=%s/coverage.xml' % TEST_OUTPUT_DIR, # /reports/utitledtests.xml
 ]
 
 # Database
